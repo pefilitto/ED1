@@ -1,13 +1,45 @@
-1,SedTincidunt.mp3,Gravar Dispositivo Interno,1,*
-2,Eros.xls,Gravar Dispositivo Interno,6,*
-3,Nam.avi,Ler,1,*
-4,Nulla.ppt,Ler,6,*
-3,In.txt,Imprimir,4,*
-4,QuisqueEratEros.doc,Ler,8,*
-4,SuspendissePotentiCras.tiff,Imprimir,5,*
-4,SitAmet.mp3,Imprimir,2,*
-4,DictumstMorbiVestibulum.jpeg,Imprimir,3,*
-4,MagnisDisParturient.doc,Imprimir,6,*
+2,UltricesPosuereCubilia.mp3,Gravar Dispositivo Externo,4,*
+3,Venenatis.xls,Ler,4,*
+2,LobortisEst.xls,Imprimir,9,*
+3,Amet.xls,Imprimir,4,*
+3,ProinLeoOdio.mp3,Deletar,2,-
+3,Etiam.doc,Deletar,1,-
+1,DolorVelEst.avi,Gravar Dispositivo Externo,5,-
+3,HacHabitasse.tiff,Gravar Dispositivo Interno,1,-
+1,LiberoNullam.pdf,Gravar Dispositivo Externo,6,-
+3,MetusVitae.jpeg,Ler,2,-
+2,Eget.mp3,Ler,5,-
+4,NislDuis.jpeg,Ler,5,-
+3,SedVelEnim.tiff,Deletar,10,-
+2,AtNibhIn.ppt,Ler,7,-
+3,Tellus.xls,Deletar,4,-
+1,IdJustoSit.jpeg,Gravar Dispositivo Externo,10,-
+3,LaciniaNisi.jpeg,Deletar,10,-
+4,CumSociis.mp3,Gravar Dispositivo Interno,10,-
+4,SuspendissePotentiCras.tiff,Imprimir,5,-
+4,Aliquet.mpeg,Ler,9,-
+2,DuisAt.xls,Ler,10,-
+4,Lectus.mp3,Gravar Dispositivo Externo,8,-
+2,PharetraMagnaAc.txt,Gravar Dispositivo Interno,8,-
+1,VehiculaConsequat.pdf,Deletar,4,-
+4,Nulla.ppt,Ler,9,-
+2,ConvallisDuis.gif,Ler,10,-
+3,Libero.mov,Gravar Dispositivo Interno,9,-
+4,EratVolutpatIn.jpeg,Gravar Dispositivo Interno,6,-
+3,In.txt,Imprimir,4,-
+3,QuisTortorId.avi,Ler,6,-
+3,DolorSitAmet.ppt,Deletar,2,-
+4,SitAmet.mp3,Imprimir,2,-
+1,VelAccumsanTellus.avi,Deletar,3,-
+4,DictumstMorbiVestibulum.jpeg,Imprimir,3,-
+3,AccumsanTellusNisi.xls,Deletar,2,-
+4,QuisqueEratEros.doc,Ler,8,-
+3,Nam.avi,Ler,9,-
+1,SedTincidunt.mp3,Gravar Dispositivo Interno,10,-
+4,Interdum.xls,Gravar Dispositivo Interno,7,-
+4,MagnisDisParturient.doc,Imprimir,6,-
+2,Dis.tiff,Gravar Dispositivo Interno,3,-
+2,Eros.xls,Gravar Dispositivo Interno,6,-
 2,SitAmet.avi,Gravar Dispositivo Interno,7,-
 4,InFaucibusOrci.tiff,Gravar Dispositivo Externo,1,-
 1,SedVelEnim.mp3,Imprimir,10,-
@@ -940,3 +972,7 @@
 4,DisParturient.mov,Deletar,2,-
 2,AliquetAtFeugiat.mpeg,Imprimir,9,-
 3,Sed.png,Gravar Dispositivo Externo,2,-
+2,Dis.mp3,Deletar,7,-
+3,SemDuis.ppt,Ler,5,-
+4,Justo.xls,Gravar Dispositivo Interno,5,-
+3,NonQuam.mp3,Imprimir,4,-

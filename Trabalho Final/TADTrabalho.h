@@ -142,7 +142,8 @@ void Exibir2(TpDesc desc){
 	getch();
 }*/
 
-void decrementa(TpDesc &desc, int &cont, int &contt, char nomeprocesso[]) {
+void decrementa(TpDesc &desc, int &cont, int &contt, char nomeprocesso[],
+int &deletar, int &gdi, int &gde, int &ler, int &imprimir) {
     TpPont *aux;
     strcpy(nomeprocesso," ");
     if (desc.inicio != NULL) {
@@ -152,6 +153,16 @@ void decrementa(TpDesc &desc, int &cont, int &contt, char nomeprocesso[]) {
          if (desc.inicio->reg.tempo == 0) {
             aux = desc.inicio;
             strcpy(nomeprocesso,aux->reg.nomearq);
+            if(strcmp(aux->reg.processo,"Gravar Dispositivo Interno")==0)
+				gdi++;
+			else if(strcmp(aux->reg.processo,"Gravar Dispositivo Externo")==0)
+				gde++;
+			else if(strcmp(aux->reg.processo,"Deletar")==0)
+				deletar++;
+			else if(strcmp(aux->reg.processo,"Ler")==0)
+				ler++;
+			else if(strcmp(aux->reg.processo,"Imprimir")==0)
+				imprimir++;
             if(desc.inicio->prox==NULL)
             	desc.inicio=NULL;
             else

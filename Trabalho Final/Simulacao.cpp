@@ -4,6 +4,8 @@
 #include <conio.h>
 #include "TADTrabalho.h"
 
+
+
 //Comentario Git
 
 void verificaPrioridade(TpReg &reg){
@@ -67,10 +69,11 @@ void simulacao(FILE *ptr, TpDesc desc1, TpDesc desc2, TpDesc desc3, TpDesc desc4
 	char click,opc;
 	char nomeprocesso1[50],nomeprocesso2[50],nomeprocesso3[50],nomeprocesso4[50];
 	int tempo=0, cont1=0, cont2=0, cont3=0, cont4=0, conttotal=0, menor = 10,flag=0;
+	int cdeletar=0,cgdi=0,cgde=0,cler=0,cimprimir=0;
 	if(ifbkp==1)
 	{
 		FILE *bkp = fopen("bkptempo.txt","r");
-		fscanf(bkp,"%d\n%d\n%d\n%d\n%d\n%d",&tempo,&conttotal,&cont1,&cont2,&cont3,&cont4);
+		fscanf(bkp,"%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d",&tempo,&conttotal,&cont1,&cont2,&cont3,&cont4,&cdeletar,&cgdi,&cgde,&cler,&cimprimir);
 		fclose(bkp);
 		int flag2 = 0;
 		while(flag2==0){
@@ -247,21 +250,21 @@ void simulacao(FILE *ptr, TpDesc desc1, TpDesc desc2, TpDesc desc3, TpDesc desc4
 			}
 		}
 		char auxprocesso[50];
-		decrementa(desc1,cont1,conttotal,auxprocesso);
+		decrementa(desc1,cont1,conttotal,auxprocesso,cdeletar,cgdi,cgde,cler,cimprimir);
 			if(strcmp(auxprocesso," ")!=0)
 				strcpy(nomeprocesso1,auxprocesso);
-		decrementa(desc2,cont2,conttotal,auxprocesso);
+		decrementa(desc2,cont2,conttotal,auxprocesso,cdeletar,cgdi,cgde,cler,cimprimir);
 			if(strcmp(auxprocesso," ")!=0)
 				strcpy(nomeprocesso2,auxprocesso);
-		decrementa(desc3,cont3,conttotal,auxprocesso);
+		decrementa(desc3,cont3,conttotal,auxprocesso,cdeletar,cgdi,cgde,cler,cimprimir);
 			if(strcmp(auxprocesso," ")!=0)
 				strcpy(nomeprocesso3,auxprocesso);
-		decrementa(desc4,cont4,conttotal,auxprocesso);
+		decrementa(desc4,cont4,conttotal,auxprocesso,cdeletar,cgdi,cgde,cler,cimprimir);
 			if(strcmp(auxprocesso," ")!=0)
 				strcpy(nomeprocesso4,auxprocesso);
 		exibir(desc1,desc2,desc3,desc4);
-		tempo++;
-		printf("Tempo decorrido: %d \nAtividades Processador 1: %d \nAtividades Processador 2: %d\nAtividades Processador 3: %d\nAtividades Processador 4: %d\nAtividades total: %d\n",tempo,cont1,cont2,cont3,cont4,conttotal);
+		tempo++;											
+		printf("Tempo decorrido: %d \nAtividades Processador 1: %d \nAtividades Processador 2: %d\nAtividades Processador 3: %d\nAtividades Processador 4: %d\nAtividades total: %d\n\nDelecoes: %d\nGravacoes em Disp. Externo: %d\nGravacoes em Disp. Interno: %d\nImpressoes: %d\nLeituras: %d\n",tempo,cont1,cont2,cont3,cont4,conttotal,cdeletar,cgdi,cgde,cler,cimprimir);
 		Sleep(500);
 	}
 	
@@ -338,7 +341,7 @@ void simulacao(FILE *ptr, TpDesc desc1, TpDesc desc2, TpDesc desc3, TpDesc desc4
 				c=fgetc(ptr4);
 			}
 			FILE *bkp = fopen("bkptempo.txt","w");
-			fprintf(bkp,"%d\n%d\n%d\n%d\n%d\n%d",tempo,conttotal,cont1,cont2,cont3,cont4);
+			fprintf(bkp,"%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d",tempo,conttotal,cont1,cont2,cont3,cont4,cdeletar,cgdi,cgde,cler,cimprimir);
 			fclose(ptr4);
 			fclose(ptr2);
 			remove("auxiliar.txt");
