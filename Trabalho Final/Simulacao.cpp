@@ -21,45 +21,49 @@ void verificaPrioridade(TpReg &reg){
 		reg.prioridade =5;
 }
 
-void exibir(TpDesc Desc1, TpDesc Desc2,TpDesc Desc3,TpDesc Desc4){
-	printf("\n------------------------------\n");
+void exibir(TpDesc Desc1, TpDesc Desc2,TpDesc Desc3,TpDesc Desc4,int vet1[],int vet2[],int vet3[],int vet4[]){
+	printf("------------------------------------------------------------------------------------------------------------------------\n");
 	TpPont *aux1=Desc1.inicio,*aux2 = Desc2.inicio,*aux3 = Desc3.inicio,*aux4 = Desc4.inicio;
-	printf("Processador 1: \n");
+	printf("Processador 1: \t| Grav.Disp.Int: %d| Grav.Disp.Ext: %d| Delecoes: %d| Leituras: %d| Impressoes: %d\n",vet1[0],vet1[1],vet1[2],vet1[3],vet1[4]);
+	printf("------------------------------------------------------------------------------------------------------------------------\n");
 	while(aux1!=NULL){
-		printf("%s\t%s\t%d",aux1->reg.nomearq,aux1->reg.processo,aux1->reg.tempo);
+		printf("%s\t%s\t%d|",aux1->reg.nomearq,aux1->reg.processo,aux1->reg.tempo);
 		if(aux1->prox == NULL)
 			aux1=NULL;
 		else aux1=aux1->prox;
 		printf("\n");
 	}
-	printf("------------------------------\n");
-	printf("Processador 2: \n");
+	printf("------------------------------------------------------------------------------------------------------------------------\n");
+	printf("Processador 2:\t| Grav.Disp.Int: %d| Grav.Disp.Ext: %d| Delecoes: %d| Leituras: %d| Impressoes: %d|\n",vet2[0],vet2[1],vet2[2],vet2[3],vet2[4]);
+	printf("------------------------------------------------------------------------------------------------------------------------\n");
 	while(aux2!=NULL){
-		printf("%s\t%s\t%d",aux2->reg.nomearq,aux2->reg.processo,aux2->reg.tempo);
+		printf("%s\t%s\t%d|",aux2->reg.nomearq,aux2->reg.processo,aux2->reg.tempo);
 		if(aux2->prox == NULL)
 			aux2=NULL;
 		else aux2=aux2->prox;
 		printf("\n");
 	}
-	printf("------------------------------\n");
-	printf("Processador 3: \n");
+	printf("------------------------------------------------------------------------------------------------------------------------\n");
+	printf("Processador 3: \t| Grav.Disp.Int: %d| Grav.Disp.Ext: %d| Delecoes: %d| Leituras: %d| Impressoes: %d\n",vet3[0],vet3[1],vet3[2],vet3[3],vet3[4]);
+	printf("------------------------------------------------------------------------------------------------------------------------\n");
 	while(aux3!=NULL){
-		printf("%s\t%s\t%d",aux3->reg.nomearq,aux3->reg.processo,aux3->reg.tempo);
+		printf("%s\t%s\t%d|",aux3->reg.nomearq,aux3->reg.processo,aux3->reg.tempo);
 		if(aux3->prox == NULL)
 			aux3=NULL;
 		else aux3=aux3->prox;
 		printf("\n");
 	}
-	printf("------------------------------\n");
-	printf("Processador 4: \n");
+	printf("------------------------------------------------------------------------------------------------------------------------\n");
+	printf("Processador 4: \t| Grav.Disp.Int: %d| Grav.Disp.Ext: %d| Delecoes: %d| Leituras: %d| Impressoes: %d\n",vet4[0],vet4[1],vet4[2],vet4[3],vet4[4]);
+	printf("------------------------------------------------------------------------------------------------------------------------\n");
 	while(aux4!=NULL){
-		printf("%s\t%s\t%d",aux4->reg.nomearq,aux4->reg.processo,aux4->reg.tempo);
+		printf("%s\t%s\t%d|",aux4->reg.nomearq,aux4->reg.processo,aux4->reg.tempo);
 		if(aux4->prox == NULL)
 			aux4=NULL;
 		else aux4=aux4->prox;
 		printf("\n");
 	}
-	printf("\n------------------------------\n");
+	printf("----------------------------------------------------------------------------------------------------\n");
 }
 
 
@@ -67,13 +71,20 @@ void simulacao(FILE *ptr, TpDesc desc1, TpDesc desc2, TpDesc desc3, TpDesc desc4
 	TpReg reg, regaux;
 	TpPont *caixa, *atual;
 	char click,opc;
+	int vet1[]={0,0,0,0,0},vet2[]={0,0,0,0,0},vet3[]={0,0,0,0,0},vet4[]={0,0,0,0,0};
 	char nomeprocesso1[50],nomeprocesso2[50],nomeprocesso3[50],nomeprocesso4[50];
 	int tempo=0, cont1=0, cont2=0, cont3=0, cont4=0, conttotal=0, menor = 10,flag=0;
 	int cdeletar=0,cgdi=0,cgde=0,cler=0,cimprimir=0;
 	if(ifbkp==1)
 	{
 		FILE *bkp = fopen("bkptempo.txt","r");
-		fscanf(bkp,"%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d",&tempo,&conttotal,&cont1,&cont2,&cont3,&cont4,&cdeletar,&cgdi,&cgde,&cler,&cimprimir);
+		fscanf(bkp, "%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n",
+    &tempo, &conttotal, &cont1, &cont2, &cont3, &cont4,
+    &vet1[0], &vet1[1], &vet1[2], &vet1[3], &vet1[4],
+    &vet2[0], &vet2[1], &vet2[2], &vet2[3], &vet2[4],
+    &vet3[0], &vet3[1], &vet3[2], &vet3[3], &vet3[4],
+    &vet4[0], &vet4[1], &vet4[2], &vet4[3], &vet4[4]);
+
 		fclose(bkp);
 		int flag2 = 0;
 		while(flag2==0){
@@ -250,21 +261,21 @@ void simulacao(FILE *ptr, TpDesc desc1, TpDesc desc2, TpDesc desc3, TpDesc desc4
 			}
 		}
 		char auxprocesso[50];
-		decrementa(desc1,cont1,conttotal,auxprocesso,cdeletar,cgdi,cgde,cler,cimprimir);
+		decrementa(desc1,cont1,conttotal,auxprocesso,vet1);
 			if(strcmp(auxprocesso," ")!=0)
 				strcpy(nomeprocesso1,auxprocesso);
-		decrementa(desc2,cont2,conttotal,auxprocesso,cdeletar,cgdi,cgde,cler,cimprimir);
+		decrementa(desc2,cont2,conttotal,auxprocesso,vet2);
 			if(strcmp(auxprocesso," ")!=0)
 				strcpy(nomeprocesso2,auxprocesso);
-		decrementa(desc3,cont3,conttotal,auxprocesso,cdeletar,cgdi,cgde,cler,cimprimir);
+		decrementa(desc3,cont3,conttotal,auxprocesso,vet3);
 			if(strcmp(auxprocesso," ")!=0)
 				strcpy(nomeprocesso3,auxprocesso);
-		decrementa(desc4,cont4,conttotal,auxprocesso,cdeletar,cgdi,cgde,cler,cimprimir);
+		decrementa(desc4,cont4,conttotal,auxprocesso,vet4);
 			if(strcmp(auxprocesso," ")!=0)
 				strcpy(nomeprocesso4,auxprocesso);
-		exibir(desc1,desc2,desc3,desc4);
+		exibir(desc1,desc2,desc3,desc4,vet1,vet2,vet3,vet4);
 		tempo++;											
-		printf("Tempo decorrido: %d \nAtividades Processador 1: %d \nAtividades Processador 2: %d\nAtividades Processador 3: %d\nAtividades Processador 4: %d\nAtividades total: %d\n\nDelecoes: %d\nGravacoes em Disp. Externo: %d\nGravacoes em Disp. Interno: %d\nImpressoes: %d\nLeituras: %d\n",tempo,cont1,cont2,cont3,cont4,conttotal,cdeletar,cgdi,cgde,cler,cimprimir);
+		printf("\n\nTempo decorrido: %d \nAtividades Processador 1: %d \nAtividades Processador 2: %d\nAtividades Processador 3: %d\nAtividades Processador 4: %d\nAtividades total: %d\n",tempo,cont1,cont2,cont3,cont4,conttotal);
 		Sleep(500);
 	}
 	
@@ -341,7 +352,13 @@ void simulacao(FILE *ptr, TpDesc desc1, TpDesc desc2, TpDesc desc3, TpDesc desc4
 				c=fgetc(ptr4);
 			}
 			FILE *bkp = fopen("bkptempo.txt","w");
-			fprintf(bkp,"%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d",tempo,conttotal,cont1,cont2,cont3,cont4,cdeletar,cgdi,cgde,cler,cimprimir);
+			fprintf(bkp, "%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n",
+    tempo, conttotal, cont1, cont2, cont3, cont4,
+    vet1[0], vet1[1], vet1[2], vet1[3], vet1[4],
+    vet2[0], vet2[1], vet2[2], vet2[3], vet2[4],
+    vet3[0], vet3[1], vet3[2], vet3[3], vet3[4],
+    vet4[0], vet4[1], vet4[2], vet4[3], vet4[4]);
+
 			fclose(ptr4);
 			fclose(ptr2);
 			remove("auxiliar.txt");
